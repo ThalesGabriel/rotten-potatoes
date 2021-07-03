@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movies
+spec:
+  selector:
+    matchLabels:
+      app: movies
+  template:
+    metadata:
+      labels:
+        app: movies
+    spec:
+      containers:
+      - name: movies
+        image: 042821/rotten-potatoes:1
+        ports:
+        - containerPort: 5000
